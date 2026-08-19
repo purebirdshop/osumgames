@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Bricolage Grotesque', 'Unbounded', system-ui, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-cinzel: 'Cinzel', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-unbounded: 'Unbounded', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #FFDA00;
+    color: #111111;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+.font-unbounded {
+  font-family: var(--font-unbounded);
+}
+
+/* Neo-Brutalist utility classes */
+.brutal-shadow {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.brutal-shadow-sm {
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.brutal-shadow-md {
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.brutal-shadow-lg {
+  box-shadow: 8px 8px 0px 0px #000000;
+}
+
+.brutal-btn {
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  transition: all 0.15s ease-in-out;
+}
+
+.brutal-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.brutal-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+
+.brutal-card {
+  border: 3px solid #000000;
+  box-shadow: 6px 6px 0px 0px #000000;
+  transition: all 0.2s ease-in-out;
+}
+
+.brutal-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px 0px #000000;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FFDA00;
+  border-left: 2px solid #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 2px solid #FFDA00;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #222222;
+}
+
+/* Opossum wag animation */
+@keyframes tailWag {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(8deg); }
+  75% { transform: rotate(-8deg); }
+}
+
+@keyframes earTwitch {
+  0%, 90%, 100% { transform: scale(1); }
+  93% { transform: scale(1.08) rotate(3deg); }
+  96% { transform: scale(0.96) rotate(-2deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-tail {
+  animation: tailWag 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-ear {
+  animation: earTwitch 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Grid paper pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.12) 1.5px, transparent 1.5px);
+}
