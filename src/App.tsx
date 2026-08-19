@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { SanityDataProvider, useSanityData } from './context/SanityDataContext';
-import { DomainSimulatorBar } from './components/DomainSimulatorBar';
 import { SanityCmsDrawer } from './components/SanityCmsDrawer';
 import { Header } from './components/common/Header';
 import { Footer } from './components/common/Footer';
@@ -15,7 +14,7 @@ import { WhatsHappeningView } from './views/WhatsHappeningView';
 import { SupportSafetyView } from './views/SupportSafetyView';
 import { OsumOpossum, OpossumState } from './components/mascot/OsumOpossum';
 import { Product } from './types';
-import { CheckCircle2, Sparkles, Send, ShoppingBag, ShieldCheck, Database } from 'lucide-react';
+import { CheckCircle2, Send, ShoppingBag, ShieldCheck, Database } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 function AppContent() {
@@ -148,15 +147,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FFDA00] text-black font-sans selection:bg-black selection:text-[#FFDA00]">
-      {/* 1. Subdomain Router & Simulator Bar */}
-      <DomainSimulatorBar
-        currentDomain={currentDomain}
-        onNavigateDomain={handleNavigateDomain}
-        redirectNotice={redirectNotice}
-        onOpenSanityCmsModal={() => setIsSanityHubOpen(true)}
-      />
-
-      {/* 2. Primary Navigation Header (Compliant with 3-Zone Contract) */}
+      {/* 1. Primary Navigation Header (Compliant with 3-Zone Contract) */}
       <Header
         currentDomain={currentDomain}
         activeView={activeView}
@@ -167,7 +158,7 @@ function AppContent() {
         onOpenPreorderModal={handleOpenPreorder}
       />
 
-      {/* 3. Main Body View Routing */}
+      {/* 2. Main Body View Routing */}
       <main className="flex-1">
         {isDedicatedProductSite ? (
           <ProductWorldView
@@ -221,14 +212,14 @@ function AppContent() {
         )}
       </main>
 
-      {/* 4. Global Footer */}
+      {/* 3. Global Footer */}
       <Footer
         onNavigate={setActiveView}
         onNavigateDomain={handleNavigateDomain}
         onOpenPlaytestModal={handleOpenPlaytest}
       />
 
-      {/* 5. Floating Interactive Mascot Buddy & CMS Quick Trigger */}
+      {/* 4. Floating Interactive Mascot Buddy & CMS Quick Trigger */}
       <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2">
         <button
           onClick={() => setIsSanityHubOpen(true)}

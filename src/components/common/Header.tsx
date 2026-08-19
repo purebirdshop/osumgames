@@ -54,9 +54,8 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-[42px] z-40 bg-white border-b-4 border-black text-black transition-colors shadow-[0_4px_0_0_#000]">
+    <header className="sticky top-[0px] z-40 bg-white border-b-4 border-black text-black transition-colors shadow-[0_4px_0_0_#000]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-        
         {/* ZONE 1: BRAND TITLE (One line, single text element / wordmark) */}
         <div className="flex items-center gap-3 shrink-0">
           {isCorporate ? (
